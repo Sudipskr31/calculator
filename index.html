@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+  <div class="projectName">Basic Caculator</div>
+  <div class="calculator">
+      <label>
+        <input type="text" id="display" class="display" disabled />
+      </label>
+      <div id="all-keys" class="all-keys">
+        <button class="btn" onclick="operations('+')">+</button>
+        <button class="btn" onclick="operations('-')">-</button>
+        <button class="btn" onclick="operations('/')">&divide;</button>
+        <button class="btn" onclick="operations('*')">&times;</button>
+        <button class="n-btn" onclick="numbers('1')">1</button>
+        <button class="n-btn" onclick="numbers('2')">2</button>
+        <button class="n-btn" onclick="numbers('3')">3</button>
+        <button class="n-btn" onclick="numbers('4')">4</button>
+        <button class="n-btn" onclick="numbers('5')">5</button>
+        <button class="n-btn" onclick="numbers('6')">6</button>
+        <button class="n-btn" onclick="numbers('7')">7</button>
+        <button class="n-btn" onclick="numbers('8')">8</button>
+        <button class="n-btn" onclick="numbers('9')">9</button>
+        <button class="n-btn" onclick="numbers('0')">0</button>
+        <button class="n-btn" onclick="">.</button>
+        <button class="n-btn" onclick="clearDisplay()">C</button>
+      </div>
+      <div class="equal-key">
+        <button onclick="calculate()" class="equal">=</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

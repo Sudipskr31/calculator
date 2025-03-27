@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap");
+
+body {
+  font-family: Pixelify, Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 130px;
+  background-color: black;
+}
+
+button {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.projectName {
+  color: #00ff04;
+  margin: 20px;
+  font-weight: 400;
+  font-size: 30px;
+  font-family:
+    Pixelify Sans,
+    sans-serif;
+}
+
+.calculator {
+  background-color: #000000;
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+  padding: 50px;
+  height: 450px;
+  width: 300px;
+}
+
+.display {
+  display: block;
+  text-align: right;
+  padding-right: 10px;
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid black;
+  border-radius: 10px;
+  align-items: center;
+  font-weight: bold;
+  font-size: 30px;
+  height: 65px;
+  width: 285px;
+  margin-bottom: 10px;
+}
+
+.btn {
+  font-size: 20px;
+  background-color: #ff9100;
+  color: #ffffff;
+}
+
+.btn:hover {
+  background-color: #ffa950;
+}
+
+.n-btn {
+  font-size: 20px;
+  background-color: #474747;
+  border: 2px solid #e4e4e4;
+  color: #ffffff;
+}
+
+.n-btn:hover {
+  background-color: #7c7c7c;
+}
+.all-keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+}
+
+.all-keys button {
+  border: 2px solid white;
+  border-radius: 70px;
+  height: 70px;
+  width: 70px;
+  margin-bottom: 10px;
+}
+
+.equal-key {
+  display: grid;
+}
+
+.equal-key button:hover {
+  background-color: #7070ff;
+}
+
+.equal-key button {
+  font-size: 20px;
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+  background-color: #5252fb;
+  color: white;
+  height: 50px;
+  width: 100%;
+  margin-top: 5px;
+}
