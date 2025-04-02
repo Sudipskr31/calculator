@@ -1,30 +1,38 @@
+// Variable to store the current input number
 let currentInput = "";
+// Variable to store the current operation
 let currentOperation = "";
+// Variable to store the previous input number
 let previousInput = "";
 
-const numbers = (number) => {
-  currentInput += number;
-  document.getElementById("display").value =
-    `${previousInput} ${currentOperation} ${currentInput}`;
+// Function to update the display with the given value
+const updateDisplay = (value) => {
+  document.getElementById("display").value = value;
 };
 
+// Function to handle number button clicks
+const numbers = (number) => {
+  currentInput += number;
+  updateDisplay(`${previousInput} ${currentOperation} ${currentInput}`);
+};
+
+// Function to handle operation button clicks
 const operations = (operation) => {
-  if (currentInput === "") return;
-  if (currentOperation !== "") {
-    calculate();
-  }
+  if (!currentInput) return;
+  if (currentOperation) calculate();
+
   currentOperation = operation;
   previousInput = currentInput;
   currentInput = "";
-  document.getElementById("display").value =
-    `${previousInput} ${currentOperation}`;
+  updateDisplay(`${previousInput} ${currentOperation}`);
 };
 
+// Function to perform the calculation based on the current operation
 const calculate = () => {
-  if (previousInput === "" || currentInput === "") return;
+  if (!previousInput || !currentInput) return;
+  const prev = parseFloat(previousInput);
+  const current = parseFloat(currentInput);
   let result;
-  let prev = parseFloat(previousInput);
-  let current = parseFloat(currentInput);
 
   switch (currentOperation) {
     case "+":
@@ -37,20 +45,22 @@ const calculate = () => {
       result = prev * current;
       break;
     case "/":
-      result = prev / current;
+      result = prev !== 0 ? prev / current : "Error";
       break;
-      default:
-      result;
+    default:
+      return;
   }
+
   currentInput = result.toString();
   currentOperation = "";
   previousInput = "";
-  document.getElementById("display").value = currentInput;
+  updateDisplay(result === "Error" ? "Error" : currentInput);
 };
 
+// Function to clear the display and reset all variables
 const clearDisplay = () => {
   currentInput = "";
   previousInput = "";
   currentOperation = "";
-  document.getElementById("display").value = "";
+  updateDisplay("");
 };
